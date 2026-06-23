@@ -25,12 +25,20 @@ func main() {
 	highscore[2] =432
 	highscore[3] =752
 
-	highscore = append(highscore, 333,444,555,666,777,888)
+	//highscore = append(highscore, 333,444,555,666,777,888)
 
 	
 	sort.Ints(highscore)
 
-	fmt.Println(highscore)
-	fmt.Println(sort.IntsAreSorted(highscore))
+	//fmt.Println(highscore)
+	//fmt.Println(sort.IntsAreSorted(highscore))
+
+	//to remove
+	var courses = []string{"HTML","CSS","Nodejs","Webdev","Reactjs","Ruby"}
+	fmt.Println(courses)
+	var index int = 3
+	courses = append(courses[:index], courses[index+1:]...)
+	fmt.Println(courses)
+
 
 }
