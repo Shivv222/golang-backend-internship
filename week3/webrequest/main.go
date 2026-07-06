@@ -19,7 +19,7 @@ func main() {
 
 	fmt.Printf("Response is : %T\n", response)
 
-	defer response.Body.Close()
+	defer response.Body.Close() //m
 
 	databyte, err := ioutil.ReadAll(response.Body)
 
