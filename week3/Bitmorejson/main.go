@@ -61,4 +61,14 @@ func DecodeJson() {
 		fmt.Println("JSON WAS INVALID")
 	}
 
+	//some cases where uou just want to add data to key value
+
+	var myOnlineData map[string]interface{}
+	json.Unmarshal(jsonDataFromWeb, &myOnlineData)
+	fmt.Printf("%#v\n", myOnlineData)
+
+	for k, v := range myOnlineData{
+		fmt.Printf("Key is %v and value is %v and Type is: %T\n",k, v, v)
+	}
+
 }
