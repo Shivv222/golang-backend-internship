@@ -14,8 +14,9 @@ type course struct {
 }
 
 func main() {
-	fmt.Println("Welcome to Bitmorejson")
-	EncodeJson()
+	fmt.Println("Welcome to Bitmorejson (encoding, decoding)")
+	//EncodeJson()
+	DecodeJson()
 
 }
 
@@ -34,5 +35,30 @@ func EncodeJson() {
 		panic(err)
 	}
 	fmt.Printf("%s\n", &finalJson)
+
+}
+
+func DecodeJson() {
+
+	jsonDataFromWeb := []byte(`
+	{
+                "coursename": "ReactJS Bootcamp",
+                "Price": 299,
+                "website": "LearnDev.online.in",
+                "tags": ["Web-dev","js"]
+    }
+	`)
+
+	var lcoCourse course
+
+	Checkvalid := json.Valid(jsonDataFromWeb)
+
+	if Checkvalid {
+		fmt.Println("JSON WAS VALID")
+		json.Unmarshal(jsonDataFromWeb, &lcoCourse)
+		fmt.Printf("%#v\n", lcoCourse)
+	}else{
+		fmt.Println("JSON WAS INVALID")
+	}
 
 }
