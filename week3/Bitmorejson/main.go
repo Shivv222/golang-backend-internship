@@ -7,7 +7,7 @@ import (
 
 type course struct {
 	Nmae     string `json:"coursename"`
-	Price    int
+	Price    int    `json:"price"`
 	Platform string `json:"website"`
 	Password string `json:"-"`
 	Tags     []string `json:"tags,omitempty"`
@@ -15,7 +15,7 @@ type course struct {
 
 func main() {
 	fmt.Println("Welcome to Bitmorejson (encoding, decoding)")
-	//EncodeJson()
+	EncodeJson()
 	DecodeJson()
 
 }
